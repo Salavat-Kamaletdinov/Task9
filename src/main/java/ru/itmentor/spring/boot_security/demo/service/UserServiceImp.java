@@ -32,7 +32,6 @@ public class UserServiceImp implements UserService {
         userDao.removeUser(id);
 
     }
-
     @Override
     public User getUserById(Long id) {
         return userDao.getUserById(id);

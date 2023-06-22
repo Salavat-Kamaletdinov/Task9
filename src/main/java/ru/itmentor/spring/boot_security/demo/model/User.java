@@ -29,8 +29,6 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
 
-
-
     public Collection<Role> getRoles() {
         return roles;
     }
