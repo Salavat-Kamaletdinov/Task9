@@ -30,6 +30,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 user.getUsername(),
                 user.getPassword(),
                 user.getAuthorities()
+
+
         );
     }
 }
