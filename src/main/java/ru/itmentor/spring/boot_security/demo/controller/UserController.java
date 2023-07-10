@@ -1,6 +1,7 @@
 package ru.itmentor.spring.boot_security.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,9 +12,8 @@ import java.security.Principal;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
 
-
+public class UserController  {
 
     private final UserService userService;
 
@@ -23,6 +23,7 @@ public class UserController {
     }
 
     @GetMapping()
+    @Secured("ROLE_USER")
     public String indexPage(ModelMap model, Principal principal) {
         model.addAttribute("user", userService.findByName(principal.getName()));
         return "user";
